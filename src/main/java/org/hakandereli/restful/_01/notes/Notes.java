@@ -42,4 +42,98 @@ public class Notes {
  *  Representation State Transfer anlamında gelmektedir.
  *
  *  HTTP - bir tcp protokülüdür. Alıcı verici arasındaki iletişimi sağlar.
+ *
+ *
+ *  ####
+ *  RESTfFul Architectural Principles
+ *
+ *  $ Addressability / Addressable resources
+ *
+ *  Kaynaklara (resourse) erişim unique / tekil bir identifier ile ulaşılabilir olmalıdır.
+ *  her kaynak , URI(uniform resource identifier) ile adreslenebilir olmalıdır.
+ *
+ *  scheme://host:port/path?queryString#fragment
+ *  scheme -> kullanılan protokol : http, https, ftp
+ *  host   -> dns adi yada ip adresi olabilir.
+ *  port   -> optional
+ *  path ve queryString
+ *
+ *  http://example.com/customers?lastName=Dereli&zipCode=34100
+ *
+ *  Tekil bir adres ile ulaşılabilir olmalıdır addressabilty bu demek
+ *
+ *  $ Representation Oriented
+ *  representation -> xml, json gibi formatlar
+ *  representation işaret simge anlamlarına gelir sözlükte buradaki anlamı ise json xml gibi formatlarda haberleşme demektir.
+ *
+ *
+ *  $ The Uniform, Constrained Interface
+ *
+ *  uri den sil ekle gibi action lar yollama bunun yerine kısıtlanmış interfaceler yani
+ *  GET,POST,PUT,DELETE GİBİ yöntemleri kullanmanızı tavsiye eden yöntemdir.
+ *
+ *  #GET
+ *  server dan bir kaynak resourse isteğinde bulunduğumuzda get kullanılırız.
+ *
+ *  idempotent -> get ile yapılan istekler server da bir şeyi değiştirmeyecek demektir.
+ *  yani bir veri okuyorsun örneğin kaç defa yaptığının bir önemi yok sonyuç aynı gelir.
+ *
+ *
+ *  #POST
+ *  non-idempotent özelliğe sahiptir.
+ *  create için kullanılır.
+ *  yapılan istek server da bir şeyler değiştirir. Yapılan istekler sonucunda farklı sonuclar döner.
+ *  işlemin kaç defa uygulandığı önemlidir örneğin adam sipariş oluşturduğu url de bir kere kalmalı yenile yaptığında tekrar sipariş oluşturmamalı
+ *
+ *
+ *  #PUT
+ *  update güncelleme işlemleri için kullanılmaktadır.
+ *  create amacıyla kullanılabilir.
+ *  get gibi idempotent özellliğe sahiptir birden fazla çağrıldığında sonuş değişmemeli
+ *  bir dosya da bir den fazla ctrl + s yaptıpğını düşün
+ *
+ *  #DELETE
+ *  idempotent özellik gösterir.
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
  * */
